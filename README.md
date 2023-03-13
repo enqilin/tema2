@@ -27,7 +27,44 @@ pytest -v
 ```
 Punto
 ```bash
+class Punto:
 
+    def __init__(self,x=0 , y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "El punto de coodernado ({},{})".format(self.x,self.y)
+
+
+    def cuadrante(self):
+        if (self.x > 0 and self.y > 0):
+            print("El punto ({}, {}) esta en primer cuadrante".format(self.x , self.y))
+        elif (self.x < 0 and self.y < 0):
+            print("El punto ({}, {}) esta en tercer cuadrante".format(self.x , self.y))
+        elif (self.x < 0 and self.y > 0):
+            print("El punto ({}, {}) esta en segundo cuadrante".format(self.x , self.y))
+        elif (self.x > 0 and self.y < 0):
+            print("El punto ({}, {}) esta en cuarto cuadrante".format(self.x , self.y))
+        elif (self.x == 0 and self.y != 0):
+            print("El punto ({}, {}) esta en el eje Y".format(self.x , self.y))
+        elif (self.x != 0 and self.y ==0):
+            print("El punto ({}, {}) esta en el eje X".format(self.x , self.y))
+        elif (self.x == 0 and self.y ==0):
+            print("El punto ({}, {}) esta en punto de origen".format(self.x , self.y))
+
+    def vector(self , punto):
+
+        resultado_x = punto.x - self.x
+        resultado_y = punto.y - self.y
+        return "el vector es ({}, {})".format(resultado_x , resultado_y)
+
+    def distancia(self, punto):
+        resultado_x = (punto.x - self.x)**2
+        resultado_y = (punto.y - self.y)**2
+        resultao =round( math.sqrt(resultado_x + resultado_y ),2)
+        return "La distancia es {}".format(resultao)
+    
 
 ```
 
